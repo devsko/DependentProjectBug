@@ -6,8 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Service\Service.csproj" />
-  </ItemGroup>
+  <Target Name="GenerateClient" BeforeTargets="CoreCompile" Condition="'$(DesignTimeBuild)' != 'true'">
+    <WriteLinesToFile File="ServiceClient.cs" Overwrite="true" Lines="public static class ServiceClient { public static void CallService() { } }" />
+  </Target>
+
+  <Target Name="CleanClient" AfterTargets="CoreClean">
+    <Delete Files="ServiceClient.cs" />
+  </Target>
 
 </Project>
