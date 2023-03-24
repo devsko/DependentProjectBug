@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <Target Name="GenerateClient" BeforeTargets="CoreCompile" Condition="'$(DesignTimeBuild)' != 'true'">
+  <Target Name="GenerateClient" BeforeTargets="CoreCompile">
     <WriteLinesToFile File="ServiceClient.cs" Overwrite="true" Lines="public static class ServiceClient { public static void CallService() { } }" />
   </Target>
 
