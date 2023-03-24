@@ -1,7 +1,6 @@
 # DependentProjectBug
 
 ```
-msbuild DependentProjectBug -t:Clean
-del lib\Code.cs
-msbuild DependentProjectBug -t:Restore -t:Build
+msbuild DependentProjectBug.sln -t:Clean
+msbuild DependentProjectBug.sln -t:Restore -t:Build
 ```
