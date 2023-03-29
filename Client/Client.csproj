@@ -8,6 +8,9 @@
 
   <Target Name="GenerateClient" BeforeTargets="CoreCompile">
     <WriteLinesToFile File="ServiceClient.cs" Overwrite="true" Lines="public static class ServiceClient { public static void CallService() { } }" />
+    <ItemGroup>
+      <Compile Include="ServiceClient.cs" />
+    </ItemGroup>
   </Target>
 
   <Target Name="CleanClient" AfterTargets="CoreClean">
